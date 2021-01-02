@@ -1,5 +1,10 @@
+#By SxNade
+#LOL
+#NOT SO COOL PROJECT
+#WROTE JUST TO UNDERSTAND SOMETHING ABOUT SOCKETS!
 import socket
 import termcolor
+
 
 golo = '''
 
