@@ -29,3 +29,4 @@ PortFU is a bash implementation of a port scanner
 
 
 **Also Note that PortFU is not IDS/IPS safe, it is meant to be used as a suplementary portscanner**
+
