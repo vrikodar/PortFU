@@ -13,6 +13,7 @@ PortFU is a bash implementation of a port scanner
             
             $ ./portfu <host-ip> <optional-time-delay-in-seconds>
 
+![](https://github.com/SxNade/PortFU/blob/main/PortFU.gif)
 
 # NOTE
 
