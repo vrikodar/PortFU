@@ -1,0 +1,67 @@
+#!/bin/bash
+
+#Author: z3r0day a.k.a SxNade
+
+BGreen='\033[1;32m'
+BRed='\033[1;31m'
+NC='\033[0m'
+BBlue='\033[1;34m'
+
+
+if [ $# -lt 1 ]
+then
+	echo -e "\n${BRed}Insufficent Arguments${NC}...."
+	echo -e "		./portfu <host>"
+	exit
+fi
+
+echo
+
+function port_check {
+
+	timeout 0.2 bash -c "echo >/dev/tcp/${1}/${2}" 2> /dev/null
+	if [ ${?} -eq 0 ]
+	then
+		echo -e "[${BGreen}+${NC}] ${BRed}${port}${NC} is ${BGreen}open${NC}"
+	fi
+}
+
+
+#Stage 1
+for port in {1..20000}
+do
+	port_check ${1} ${port} &
+done
+wait
+echo -e "[${BGreen}+${NC}] ${BRed}stage1${NC} ${BBlue}finished${NC}"
+sleep 4
+
+#Stage 2
+for port in {20001..40000}
+do
+	 port_check ${1} ${port} &
+done
+wait
+echo -e "[${BGreen}+${NC}] ${BRed}stage2${NC} ${BBlue}finished${NC}"
+sleep 4
+
+#Stage 3
+for port in {40001..60000}
+do
+	port_check ${1} ${port} &
+done
+wait
+echo -e "[${BGreen}+${NC}] ${BRed}stage3${NC} ${BBlue}finished${NC}"
+sleep 4
+
+#Stage 4
+for port in {60001..65535}
+do
+	port_check ${1} ${port} &
+done
+wait
+echo -e "[${BGreen}+${NC}] ${BRed}stage4${NC} ${BBlue}finished${NC}"
+
+#End
+echo -e "\n[${BBlue}+${NC}] All ports have Been ${BBlue}scanned.${NC}\n"
+
