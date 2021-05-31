@@ -17,6 +17,12 @@ PortFU is a bash implementation of a port scanner
 
 ![](https://github.com/SxNade/PortFU/blob/main/portfu.gif)
 
+# One Shot GO
+
+*This one Liner will download portfu on your system*
+
+            $ wget https://raw.githubusercontent.com/SxNade/PortFU/main/portfu -o portfu ; chmod +x portfu ; ./portfu
+
 # NOTE
 
 **PortFU can be harsh on some low-end CPU's in that case you are advised to increase the time Delay `[Default is set to 5]`**
