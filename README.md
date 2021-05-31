@@ -21,7 +21,7 @@ PortFU is a bash implementation of a port scanner
 
 *This one Liner will download portfu on your system*
 
-             wget https://raw.githubusercontent.com/SxNade/PortFU/main/portfu -o portfu ; chmod +x portfu ; ./portfu
+`curl -s https://raw.githubusercontent.com/SxNade/PortFU/main/portfu -o portfu && chmod +x portfu && ./portfu`
 
 # NOTE
 
