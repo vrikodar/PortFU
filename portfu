@@ -11,11 +11,19 @@ BBlue='\033[1;34m'
 if [ $# -lt 1 ]
 then
 	echo -e "\n${BRed}Insufficent Arguments${NC}...."
-	echo -e "		./portfu <host>"
+	echo -e "		./mapsh <host>"
 	exit
 fi
 
 echo
+
+if [ $# -ge 2 ]
+then
+	sleeptime=${2}
+	echo -e "[${BGreen}+${NC}] ${BRed}user-specified-sleep-time${NC} ${BGreen}${sleeptime}${NC}\n"
+else
+	sleeptime=5
+fi
 
 function port_check {
 
@@ -34,7 +42,7 @@ do
 done
 wait
 echo -e "[${BGreen}+${NC}] ${BRed}stage1${NC} ${BBlue}finished${NC}"
-sleep 4
+sleep ${sleeptime}
 
 #Stage 2
 for port in {20001..40000}
@@ -43,7 +51,7 @@ do
 done
 wait
 echo -e "[${BGreen}+${NC}] ${BRed}stage2${NC} ${BBlue}finished${NC}"
-sleep 4
+sleep ${sleeptime}
 
 #Stage 3
 for port in {40001..60000}
@@ -52,7 +60,7 @@ do
 done
 wait
 echo -e "[${BGreen}+${NC}] ${BRed}stage3${NC} ${BBlue}finished${NC}"
-sleep 4
+sleep ${sleeptime}
 
 #Stage 4
 for port in {60001..65535}
