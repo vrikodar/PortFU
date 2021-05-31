@@ -7,7 +7,7 @@ BRed='\033[1;31m'
 NC='\033[0m'
 BBlue='\033[1;34m'
 
-echo -e "[${BGreen}+${NC}] ${BRed}PortFU${NC}${BBlue}v(1.0)${NC}${BGreen}${sleeptime}${NC}\n"
+echo -e "[${BGreen}+${NC}] ${BRed}PortFU${NC}${BBlue}v(1.0) ${NC}${BGreen}initializing..${NC}\n"
 
 if [ $# -lt 1 ]
 then
