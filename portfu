@@ -12,7 +12,7 @@ echo -e "\n[${BGreen}+${NC}] ${BRed}PortFU${NC}${BBlue}v(1.0) [Author: ${BRed}z3
 if [ $# -lt 1 ]
 then
 	echo -e "\n${BRed}Insufficent Arguments${NC}...."
-	echo -e "		./mapsh <host>"
+	echo -e "		./portfu <host>"
 	exit
 fi
 
@@ -23,7 +23,7 @@ then
 	sleeptime=${2}
 	echo -e "[${BGreen}+${NC}] ${BRed}user-specified-sleep-time${NC} ${BGreen}${sleeptime}${NC}\n"
 else
-	sleeptime=5
+	sleeptime=2
 fi
 
 function port_check {
@@ -35,42 +35,70 @@ function port_check {
 	fi
 }
 
+function range_scan {
+	for port in $(seq ${2} ${3})
+	do
+		port_check ${1} ${port} &
+	done
+	wait
+}
 
 #Stage 1
-for port in {1..20000}
-do
-	port_check ${1} ${port} &
-done
-wait
-echo -e "[${BGreen}+${NC}] ${BRed}stage1${NC} ${BBlue}finished${NC}"
+range_scan ${1} 0 5000
 sleep ${sleeptime}
 
 #Stage 2
-for port in {20001..40000}
-do
-	 port_check ${1} ${port} &
-done
-wait
-echo -e "[${BGreen}+${NC}] ${BRed}stage2${NC} ${BBlue}finished${NC}"
+range_scan ${1} 5001 10000
 sleep ${sleeptime}
 
 #Stage 3
-for port in {40001..60000}
-do
-	port_check ${1} ${port} &
-done
-wait
-echo -e "[${BGreen}+${NC}] ${BRed}stage3${NC} ${BBlue}finished${NC}"
+range_scan ${1} 10001 15000
 sleep ${sleeptime}
 
 #Stage 4
-for port in {60001..65535}
-do
-	port_check ${1} ${port} &
-done
-wait
-echo -e "[${BGreen}+${NC}] ${BRed}stage4${NC} ${BBlue}finished${NC}"
+range_scan ${1} 15001 20000
+sleep ${sleeptime}
 
+#Stage 5
+range_scan ${1} 20001 25000
+sleep ${sleeptime}
+
+#Stage 6
+range_scan ${1} 25001 30000
+sleep ${sleeptime}
+
+#Stage 7
+range_scan ${1} 25001 30000
+sleep ${sleeptime}
+
+#Stage 8
+range_scan ${1} 30001 35000
+sleep ${sleeptime}
+
+#Stage 5
+range_scan ${1} 35001 40000
+echo -e "[${BGreen}+${NC}] ${BRed}50%${NC} ${BBlue}finished${NC}"
+sleep ${sleeptime}
+
+#Stage 6
+range_scan ${1} 40001 45000
+sleep ${sleeptime}
+
+#Stage 7
+range_scan ${1} 45001 50000
+sleep ${sleeptime}
+
+#Stage 8
+range_scan ${1} 50001 55000
+sleep ${sleeptime}
+
+#Stage 9
+range_scan ${1} 55001 60000
+sleep ${sleeptime}
+
+#Stage 10
+range_scan ${1} 60001 65535
+sleep ${sleeptime}
 #End
 echo -e "\n[${BBlue}+${NC}] All ports have Been ${BBlue}scanned.${NC}\n"
 
