@@ -15,7 +15,7 @@ PortFU is a bash implementation of a port scanner
 
 # In Action
 
-![](https://github.com/SxNade/PortFU/blob/main/PortFU.gif)
+![](https://github.com/SxNade/PortFU/blob/main/portfu.gif)
 
 # NOTE
 
