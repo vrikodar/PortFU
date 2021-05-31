@@ -8,7 +8,7 @@ PortFU is a bash implementation of a port scanner
 
 
             $ git clone https://github.com/SxNade/PortFU
-            $ cd PortFu
+            $ cd PortFU
             $ chmod +x portfu
             
             $ ./portfu <host-ip> <optional-time-delay-in-seconds>
