@@ -11,4 +11,9 @@ PortFU is a bash implementation of a port scanner
             $ cd PortFu
             $ chmod +x portfu
             
-            $ ./portfu <host-ip>
+            $ ./portfu <host-ip> <optional-time-delay-in-seconds>
+
+
+# NOTE
+
+**PortFU can be harsh on some low-end CPU's in that case you are advised to increase the time Delay `[Default is set to 5]`**
