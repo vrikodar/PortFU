@@ -5,3 +5,10 @@
 PortFU is a bash implementation of a port scanner
 
 # Installation and running
+
+
+            $ git clone https://github.com/SxNade/PortFU
+            $ cd PortFu
+            $ chmod +x portfu
+            
+            $ ./portfu <host-ip>
