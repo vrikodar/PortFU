@@ -31,7 +31,8 @@ function port_check {
 	timeout 2 bash -c "echo >/dev/tcp/${1}/${2}" 2> /dev/null
 	if [ ${?} -eq 0 ]
 	then
-		echo -e "[${BGreen}+${NC}] ${BRed}${port}${NC} is ${BGreen}open${NC}"
+		echo "${2}" >> ${1}_ports
+		echo -e "[${BGreen}+${NC}] ${BRed}${2}${NC} is ${BGreen}open${NC}"
 	fi
 }
 
