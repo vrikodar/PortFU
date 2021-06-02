@@ -25,7 +25,7 @@ PortFU is a bash implementation of a port scanner
 
 # NOTE
 
-**PortFU can be harsh on some low-end CPU's in that case you are advised to increase the time Delay `[Default is set to 5]`**
+**PortFU can be harsh on some low-end CPU's in that case you are advised to increase the time Delay `[Default is set to 2 seconds]`**
 
 
 **Also Note that PortFU is not IDS/IPS safe, it is meant to be used as a suplementary portscanner**
