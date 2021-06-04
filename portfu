@@ -102,4 +102,4 @@ range_scan ${1} 60001 65535
 sleep ${sleeptime}
 #End
 echo -e "\n[${BBlue}+${NC}] All ports have Been ${BBlue}scanned.${NC}\n"
-
+echo -e "[${BBlue}+${NC}] Results have been written to${BBlue}${1}_ports${NC}\n"
