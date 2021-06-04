@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+
+#This script will take all the ports from the text file containing the ports discovered open and then arrange them in a command seprated format to use with nmap
+
+import sys
+
+str = ''
+
+with open(sys.argv[1]) as file:
+	for line in file.readlines():
+		str += f"{line.strip()}" + ","
+
+print(str)
