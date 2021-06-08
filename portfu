@@ -23,7 +23,7 @@ then
 	sleeptime=${2}
 	echo -e "[${BGreen}+${NC}] ${BRed}user-specified-sleep-time${NC} ${BGreen}${sleeptime}${NC}\n"
 else
-	sleeptime=2
+	sleeptime=3
 fi
 
 function port_check {
