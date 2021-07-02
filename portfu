@@ -12,7 +12,7 @@ echo -e "\n[${BGreen}+${NC}] ${BRed}PortFU${NC}${BBlue} v(1.0) [Author: ${BRed}z
 if [ $# -lt 1 ]
 then
 	echo -e "\n${BRed}Insufficent Arguments${NC}...."
-	echo -e "		./portfu <host> <optional-time-delay-in-seconds>"
+	echo -e "		./portfu <host> <optional-time-delay-in-seconds>\n"
 	exit
 fi
 
